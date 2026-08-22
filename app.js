@@ -1,3 +1,4 @@
+const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/1GVwiEQIg2snbVJqzNBBG1VmXhJdWnANgXRDF21ekDvU/export?format=csv&gid=330320146";
 
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 let OWNED=[], ROWS=[];
@@ -61,11 +62,11 @@ async function load(){
      const text=await resp.text();
      rows=parseCSV(text);
      if(!rows.length || !Object.prototype.hasOwnProperty.call(rows[0],'Gioco')) throw new Error('CSV non valido');
-     $('#status').textContent='DATI LIVE · build v3.1';
+     $('#status').textContent='DATI LIVE · build v3.2';
    } catch(e){
-     $('#status').textContent='ERRORE GOOGLE SHEET · build v3.1';
+     $('#status').textContent='ERRORE GOOGLE SHEET · build v3.2';
    }
- } else $('#status').textContent='CONFIG NON CARICATO · build v3.1';
+ } else $('#status').textContent='CONFIG INTERNA · build v3.2';
  // local fallback only to preserve current play counts until sheet goes live
  if(!rows.length && !(typeof SHEET_CSV_URL==='string'&&SHEET_CSV_URL)){
    const s=await fetch('./data.json?v=31',{cache:'no-store'}).then(r=>r.json());
@@ -74,6 +75,6 @@ async function load(){
  render(rows);
 }
 $$('.tab').forEach(b=>b.onclick=()=>{$$('.tab').forEach(x=>x.classList.toggle('active',x===b));['home','games','players','history','detail'].forEach(v=>$('#'+v).classList.toggle('hidden',v!==b.dataset.v))});
-document.addEventListener('click',e=>{const b=e.target.closest('[data-game]');if(!b)return;const g=OWNED.find(x=>x.name===b.dataset.game);$('#detailbody').innerHTML=`<div class="card"><h2>${b.dataset.game}</h2><p class="muted">${g?.type==='expansion'?'Espansione':'Gioco'} · pagina dettaglio build v3.1</p></div>`;['home','games','players','history'].forEach(v=>$('#'+v).classList.add('hidden'));$('#detail').classList.remove('hidden')});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-game]');if(!b)return;const g=OWNED.find(x=>x.name===b.dataset.game);$('#detailbody').innerHTML=`<div class="card"><h2>${b.dataset.game}</h2><p class="muted">${g?.type==='expansion'?'Espansione':'Gioco'} · pagina dettaglio build v3.2</p></div>`;['home','games','players','history'].forEach(v=>$('#'+v).classList.add('hidden'));$('#detail').classList.remove('hidden')});
 $('#back').onclick=()=>{$('#detail').classList.add('hidden');$('#games').classList.remove('hidden')};
 load();
