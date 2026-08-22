@@ -1,0 +1,60 @@
+{
+  "games": [
+    {
+      "name": "Bomb Busters",
+      "plays": 9,
+      "emoji": "💣"
+    },
+    {
+      "name": "Power Hungry Pets",
+      "plays": 4,
+      "emoji": "🐾"
+    },
+    {
+      "name": "Flip 7",
+      "plays": 3,
+      "emoji": "7️⃣"
+    },
+    {
+      "name": "Seven Wonders Architects",
+      "plays": 2,
+      "emoji": "🏗️"
+    },
+    {
+      "name": "Seven Wonders Duel",
+      "plays": 2,
+      "emoji": "⚔️"
+    },
+    {
+      "name": "Cyclades",
+      "plays": 1,
+      "emoji": "🌊"
+    },
+    {
+      "name": "Sagrada",
+      "plays": 1,
+      "emoji": "🌈"
+    }
+  ],
+  "players": [
+    {
+      "name": "Francesco"
+    },
+    {
+      "name": "Silvia"
+    },
+    {
+      "name": "Checco"
+    },
+    {
+      "name": "Nico"
+    },
+    {
+      "name": "Passo"
+    },
+    {
+      "name": "Jo"
+    }
+  ],
+  "note": "Fallback locale. Quando config.js contiene l'URL CSV pubblicato del foglio Partite, l'app usa i dati live."
+}

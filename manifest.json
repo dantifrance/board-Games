@@ -1,0 +1,10 @@
+{
+  "name": "Board Games — Francesco & Friends",
+  "short_name": "Board Games",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f1e9",
+  "theme_color": "#151515",
+  "icons": []
+}
