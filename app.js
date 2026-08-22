@@ -24,7 +24,8 @@ function stats(rows){
  });
  return {players:Object.values(players),games:Object.values(games)};
 }
-async function load(){
+async function getCollection(){return fetch('collection.json').then(r=>r.json())}
+async function load(){ const owned=await getCollection(); window.OWNED=owned; owned.forEach(x=>{if(x.cover)coverMap[x.name]=x.cover});
  let rows=[], live=false;
  if(typeof SHEET_CSV_URL==='string'&&SHEET_CSV_URL){
   try{const t=await fetch(SHEET_CSV_URL,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.text()});rows=parseCSV(t);live=true}catch(e){}
@@ -33,28 +34,36 @@ async function load(){
   const snap=await fetch('data.json').then(r=>r.json());
   // fallback cards only until Google Sheet is published
   snap.games.forEach((g,i)=>coverMap[g.name]=coverFiles[i]||'');
-  renderSnapshot(snap); $('#status').textContent='Modalità locale · collega Google Sheet per dati live'; return;
+  snap.games.forEach(g=>{const o=owned.find(x=>x.name===g.name); if(o&&o.cover)coverMap[g.name]=o.cover});
+renderSnapshot({...snap,owned}); $('#status').textContent='Modalità locale · collega Google Sheet per dati live'; return;
  }
  renderRows(rows,live);
 }
 function gameCard(g,i){
- const img=coverMap[g.name]||coverFiles[i%coverFiles.length]||'';
- return `<button class="card game" data-game="${g.name.replaceAll('"','&quot;')}"><div class="cover" style="${img?`background-image:url('${img}')`:''}">${img?'':'🎲'}</div><div class="txt"><b>${g.name}</b><div class="muted">${g.plays} ${g.name==='Bomb Busters'?'missioni':'partite'}</div></div></button>`;
+ const img=coverMap[g.name]||'';
+ const kind=g.type==='expansion'?' · Espansione':g.type==='standalone'?' · Stand-alone':'';
+ return `<button class="card game" data-game="${g.name.replaceAll('"','&quot;')}"><div class="cover" style="${img?`background-image:url('${img}')`:''}">${img?'':'🎲'}</div><div class="txt"><b>${g.name}</b><div class="muted">${g.plays} ${g.name==='Bomb Busters'?'missioni':'partite'}${kind}</div></div></button>`;
 }
 function renderSnapshot(s){
  $('#total').textContent='—'; $('#metrics').innerHTML=`<div class="card metric"><span class="muted">Bomb Busters</span><b>9</b></div><div class="card metric"><span class="muted">Giochi</span><b>${s.games.length}</b></div>`;
  $('#ranking').innerHTML='<div class="muted">Le statistiche giocatori appariranno appena colleghiamo il foglio live.</div>';
- $('#topgames').innerHTML=s.games.slice(0,4).map(gameCard).join(''); $('#allgames').innerHTML=s.games.map(gameCard).join('');
+ $('#topgames').innerHTML=s.games.slice(0,4).map(gameCard).join('');
+ const counts=Object.fromEntries(s.games.map(g=>[g.name,g.plays]));
+ const owned=(s.owned||window.OWNED||[]).map(x=>({name:x.name,plays:counts[x.name]||0,type:x.type}));
+ $('#allgames').innerHTML=owned.map(gameCard).join('');
  $('#playerlist').innerHTML='<div class="muted">In attesa dei dati live.</div>'; $('#historylist').innerHTML='<div class="muted">In attesa dei dati live.</div>';
 }
 function renderRows(rows,live){
  const st=stats(rows); st.games.sort((a,b)=>b.plays-a.plays); st.players.sort((a,b)=>b.wins-a.wins||b.plays-a.plays);
- st.games.forEach((g,i)=>coverMap[g.name]=coverFiles[i]||'');
+ 
  $('#status').textContent=live?'Dati live dal registro Google Sheets':'Dati locali';
  $('#total').textContent=`${rows.length} partite`;
  $('#metrics').innerHTML=`<div class="card metric"><span class="muted">Partite</span><b>${rows.length}</b></div><div class="card metric"><span class="muted">Giochi giocati</span><b>${st.games.length}</b></div><div class="card metric"><span class="muted">Giocatori</span><b>${st.players.length}</b></div><div class="card metric"><span class="muted">Bomb Busters</span><b>${st.games.find(g=>g.name==='Bomb Busters')?.plays||0}</b></div>`;
  $('#ranking').innerHTML=st.players.map((p,i)=>`<div class="row"><b>${i+1}.</b><div class="grow"><b>${p.name}</b><div class="muted">${p.plays} giocate · ${p.wins} vittorie</div></div><span class="badge">${p.plays?(p.wins/p.plays*100).toFixed(1):0}%</span></div>`).join('');
- $('#topgames').innerHTML=st.games.slice(0,4).map(gameCard).join(''); $('#allgames').innerHTML=st.games.map(gameCard).join('');
+ $('#topgames').innerHTML=st.games.slice(0,4).map(gameCard).join('');
+ const countMap=Object.fromEntries(st.games.map(g=>[g.name,g.plays]));
+ const owned=(window.OWNED||[]).map(x=>({name:x.name,plays:countMap[x.name]||0,type:x.type}));
+ $('#allgames').innerHTML=owned.map(gameCard).join('');
  $('#playerlist').innerHTML=st.players.map(p=>`<div class="row"><div class="grow"><b>${p.name}</b><div class="muted">${p.plays} giocate</div></div><b>${p.wins} 🏆</b></div>`).join('');
  $('#historylist').innerHTML=[...rows].reverse().slice(0,50).map(r=>`<div class="row"><div class="grow"><b>${r['Gioco']}</b><div class="muted">${r['Data']} ${r['Espansione / Variante']?`· ${r['Espansione / Variante']}`:''}</div></div><div><b>${r['Vincitore/i']}</b><div class="muted">${r['Punteggi']||r['Tipo vittoria']||''}</div></div></div>`).join('');
 }
