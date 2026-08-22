@@ -7,3 +7,5 @@ h1{font-size:32px;margin:3px 0}.pill,.tab{border:0;border-radius:999px;padding:1
 .section{margin-top:28px}.sectionhead{display:flex;justify-content:space-between;align-items:center}.games{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.game{border:0;text-align:left;min-height:210px;overflow:hidden;padding:0}.cover{height:145px;background:#eee center/cover no-repeat;display:flex;align-items:center;justify-content:center;font-size:50px}.game .txt{padding:14px}.row{display:flex;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid #eee}.row:last-child{border:0}.grow{flex:1}.hidden{display:none}.badge{font-weight:800}
 @media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr)}.games{grid-template-columns:repeat(4,1fr)}}
 @media(prefers-color-scheme:dark){:root{color:#f4f4f4;background:#101113}.card{background:#1b1c1f;border-color:#2c2d31}.pill,.tab{background:#292a2e;color:#eee}.row{border-color:#303136}}
+
+.build{display:inline-block;margin-top:8px;padding:4px 8px;border-radius:999px;background:#fff3cd;color:#6b5200;font-size:11px;font-weight:900;letter-spacing:.08em}
