@@ -8,6 +8,7 @@ const $$ = selector => [...document.querySelectorAll(selector)];
 let games = [];
 let matches = [];
 let collectionFallback = [];
+const filters = {mode: "", complexity: "", category: ""};
 
 function parseCsv(text) {
   const table = [];
@@ -45,7 +46,15 @@ function normalizeGames(rows) {
       owned: isYes(row.Posseduto),
       owner: row["Proprietario / Origine"] || "",
       wishlist: isYes(row.Wishlist),
-      cover: row.Copertina || fallback.cover || ""
+      cover: row.Copertina || fallback.cover || "",
+      mode: row.Modalità || fallback.mode || "Competitivo",
+      complexity: row.Complessità || fallback.complexity || "Light",
+      category: row.Categoria || fallback.category || "",
+      bggTitle: row["Titolo originale BGG"] || fallback.bggTitle || row.Gioco,
+      bggId: Number(row["BGG ID"] || fallback.bggId) || null,
+      bggRank: Number(row["BGG Overall Rank"] || fallback.bggRank) || null,
+      bggWeight: Number(String(row["Peso BGG"] || fallback.bggWeight || "").replace(",", ".")) || null,
+      bggUpdated: row["Aggiornamento BGG"] || fallback.bggUpdated || ""
     };
   });
   const known = new Set(normalized.map(game => game.name));
@@ -63,10 +72,11 @@ function gameCard(game) {
   const ownershipIcon = game.owned ? "🏠" : "👤";
   const heart = game.wishlist ? "♥" : "♡";
   const heartLabel = game.wishlist ? "Rimuovi dalla wishlist" : "Aggiungi alla wishlist";
+  const bggBadge = game.bggRank ? `<a class="bgg" href="https://boardgamegeek.com/boardgame/${game.bggId}" target="_blank" rel="noopener" aria-label="Apri ${escapeHtml(game.bggTitle)} su BoardGameGeek">BGG #${game.bggRank}</a>` : "";
   return `<article class="card game" data-game="${escapeHtml(game.name)}">
     <button class="game-open" data-open-game="${escapeHtml(game.name)}" aria-label="Apri ${escapeHtml(game.name)}">
       <div class="cover">${cover ? `<img src="${escapeHtml(cover)}" alt="Copertina di ${escapeHtml(game.name)}" loading="lazy" onerror="this.remove();this.parentElement.classList.add('missing');this.parentElement.textContent='🎲'">` : "🎲"}</div>
-      <div class="txt"><b>${escapeHtml(game.name)}</b><div class="muted">${game.plays || 0} ${unit}${type}</div></div>
+      <div class="txt"><div class="titleline"><b>${escapeHtml(game.name)}</b>${bggBadge}</div><div class="muted">${game.plays || 0} ${unit}${type}</div><div class="tags"><span>${escapeHtml(game.mode)}</span><span>${escapeHtml(game.complexity)}</span><span>${escapeHtml(game.category)}</span></div></div>
     </button>
     <div class="game-actions"><span class="ownership" title="${escapeHtml(ownershipLabel)}"><span aria-hidden="true">${ownershipIcon}</span> ${escapeHtml(ownershipLabel)}</span>
       ${game.owned ? "" : `<button class="heart ${game.wishlist ? "active" : ""}" data-wishlist="${escapeHtml(game.name)}" aria-pressed="${game.wishlist}" aria-label="${heartLabel}">${heart}</button>`}
@@ -75,8 +85,11 @@ function gameCard(game) {
 }
 
 function render() {
+  const shownNames = new Set(games.filter(game => (!filters.mode || game.mode === filters.mode) && (!filters.complexity || game.complexity === filters.complexity) && (!filters.category || game.category === filters.category)).map(game => game.name));
+  const filtering = Object.values(filters).some(Boolean);
+  const shownMatches = filtering ? matches.filter(row => shownNames.has(row.Gioco)) : matches;
   const people = {}, playCount = {};
-  for (const row of matches) {
+  for (const row of shownMatches) {
     const gameName = row.Gioco;
     if (gameName) playCount[gameName] = (playCount[gameName] || 0) + 1;
     for (const name of split(row.Giocatori)) { people[name] ??= {name, plays: 0, wins: 0}; people[name].plays++; }
@@ -84,16 +97,17 @@ function render() {
   }
   const players = Object.values(people).sort((a,b) => b.wins - a.wins || b.plays - a.plays);
   games = games.map(game => ({...game, plays: playCount[game.name] || 0}));
-  const played = games.filter(game => game.plays).sort((a,b) => b.plays - a.plays);
-  const wishlist = games.filter(game => game.wishlist && !game.owned);
-  $("#total").textContent = `${matches.length} partite`;
-  $("#metrics").innerHTML = `<div class="card metric"><span class="muted">Partite</span><b>${matches.length}</b></div><div class="card metric"><span class="muted">Collezione</span><b>${games.filter(game => game.owned && game.type !== "expansion").length}</b></div><div class="card metric"><span class="muted">Wishlist</span><b>${wishlist.length}</b></div><div class="card metric"><span class="muted">Giocatori</span><b>${players.length}</b></div>`;
+  const shownGames = games.filter(game => shownNames.has(game.name));
+  const played = shownGames.filter(game => game.plays).sort((a,b) => b.plays - a.plays);
+  const wishlist = shownGames.filter(game => game.wishlist && !game.owned);
+  $("#total").textContent = `${shownMatches.length} partite`;
+  $("#metrics").innerHTML = `<div class="card metric"><span class="muted">Partite</span><b>${shownMatches.length}</b></div><div class="card metric"><span class="muted">Collezione</span><b>${shownGames.filter(game => game.owned && game.type !== "expansion").length}</b></div><div class="card metric"><span class="muted">Wishlist</span><b>${wishlist.length}</b></div><div class="card metric"><span class="muted">Giocatori</span><b>${players.length}</b></div>`;
   $("#ranking").innerHTML = players.map((player, i) => `<div class="row"><b>${i+1}.</b><div class="grow"><b>${escapeHtml(player.name)}</b><div class="muted">${player.plays} giocate · ${player.wins} vittorie</div></div><span class="badge">${player.plays ? (player.wins/player.plays*100).toFixed(0) : 0}%</span></div>`).join("");
-  $("#topgames").innerHTML = (played.length ? played : games).slice(0,4).map(gameCard).join("");
-  $("#allgames").innerHTML = games.map(gameCard).join("");
+  $("#topgames").innerHTML = (played.length ? played : shownGames).slice(0,4).map(gameCard).join("");
+  $("#allgames").innerHTML = shownGames.length ? shownGames.map(gameCard).join("") : `<div class="card empty">Nessun gioco corrisponde ai filtri scelti.</div>`;
   $("#wishlistgames").innerHTML = wishlist.length ? wishlist.map(gameCard).join("") : `<div class="card empty">Tocca ♡ su un gioco non posseduto per aggiungerlo qui.</div>`;
   $("#playerlist").innerHTML = players.map(player => `<div class="row"><div class="grow"><b>${escapeHtml(player.name)}</b><div class="muted">${player.plays} giocate</div></div><b>${player.wins} 🏆</b></div>`).join("");
-  $("#historylist").innerHTML = [...matches].reverse().slice(0,60).map(row => `<div class="row"><div class="grow"><b>${escapeHtml(row.Gioco || "")}</b><div class="muted">${escapeHtml(row.Data || "")}</div></div><b>${escapeHtml(row["Vincitore/i"] || "")}</b></div>`).join("");
+  $("#historylist").innerHTML = [...shownMatches].reverse().slice(0,60).map(row => `<div class="row"><div class="grow"><b>${escapeHtml(row.Gioco || "")}</b><div class="muted">${escapeHtml(row.Data || "")}</div></div><b>${escapeHtml(row["Vincitore/i"] || "")}</b></div>`).join("");
 }
 
 async function toggleWishlist(button) {
@@ -122,7 +136,7 @@ async function toggleWishlist(button) {
 async function start() {
   try {
     const [fallback, matchResponse, gameResponse] = await Promise.all([
-      fetch("./collection.json?v=35", {cache:"no-store"}).then(r => r.ok ? r.json() : []),
+      fetch("./collection.json?v=36", {cache:"no-store"}).then(r => r.ok ? r.json() : []),
       fetch(MATCHES_CSV_URL, {cache:"no-store"}),
       fetch(GAMES_CSV_URL, {cache:"no-store"})
     ]);
@@ -132,11 +146,11 @@ async function start() {
     const gameRows = parseCsv(await gameResponse.text());
     if (!matches.length || !("Gioco" in matches[0]) || !gameRows.some(row => row.Gioco)) throw Error("csv");
     games = normalizeGames(gameRows);
-    $("#status").textContent = "DATI LIVE · build v3.5";
+    $("#status").textContent = "DATI LIVE · build v3.6";
     render();
   } catch (error) {
     console.error(error);
-    $("#status").textContent = "ERRORE DATI · build v3.5";
+    $("#status").textContent = "ERRORE DATI · build v3.6";
     $("#total").textContent = "Errore";
   }
 }
@@ -152,9 +166,11 @@ document.addEventListener('click', event => {
   if (!open) return;
   const game = games.find(item => item.name === open.dataset.openGame);
   if (!game) return;
-  $("#detailbody").innerHTML = `<div class="card"><h2>${escapeHtml(game.name)}</h2><p class="muted">${game.owned ? "🏠 In collezione" : `👤 ${escapeHtml(game.owner || "Non posseduto")}`}${game.wishlist ? " · ♥ Wishlist" : ""}</p></div>`;
+  $("#detailbody").innerHTML = `<div class="card"><h2>${escapeHtml(game.name)}</h2><p class="muted">${game.owned ? "🏠 In collezione" : `👤 ${escapeHtml(game.owner || "Non posseduto")}`}${game.wishlist ? " · ♥ Wishlist" : ""}</p><p>${escapeHtml(game.mode)} · ${escapeHtml(game.complexity)} · ${escapeHtml(game.category)}</p>${game.bggId ? `<p><a class="bgg" href="https://boardgamegeek.com/boardgame/${game.bggId}" target="_blank" rel="noopener">${escapeHtml(game.bggTitle)}${game.bggRank ? ` · BGG #${game.bggRank}` : ""}${game.bggWeight ? ` · peso ${game.bggWeight.toFixed(2)}` : ""}</a></p>` : ""}</div>`;
   ['home','games','wishlist','players','history'].forEach(view => $(`#${view}`).classList.add('hidden'));
   $('#detail').classList.remove('hidden');
 });
 $('#back').onclick = () => { $('#detail').classList.add('hidden'); $('#games').classList.remove('hidden'); };
+$$('[data-filter]').forEach(select => select.onchange = () => { filters[select.dataset.filter] = select.value; render(); });
+$('#clearfilters').onclick = () => { Object.keys(filters).forEach(key => filters[key] = ""); $$('[data-filter]').forEach(select => select.value = ""); render(); };
 start();

@@ -2,261 +2,677 @@
   {
     "name": "Bomb Busters",
     "type": "base",
-    "cover": "covers/bomb-busters.jpg"
+    "cover": "covers/bomb-busters.jpg",
+    "mode": "Cooperativo",
+    "complexity": "Light",
+    "category": "Puzzle / astratto",
+    "bggTitle": "Bomb Busters",
+    "bggId": null,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Power Hungry Pets",
     "type": "base",
-    "cover": "covers/power-hungry-pets.jpg"
+    "cover": "covers/power-hungry-pets.jpg",
+    "mode": "Competitivo",
+    "complexity": "Light",
+    "category": "Party / sociale",
+    "bggTitle": "Power Hungry Pets",
+    "bggId": null,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Flip 7",
     "type": "base",
-    "cover": "covers/flip-7.jpg"
+    "cover": "covers/flip-7.jpg",
+    "mode": "Competitivo",
+    "complexity": "Light",
+    "category": "Deduzione / bluff",
+    "bggTitle": "Flip 7",
+    "bggId": null,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Seven Wonders Architects",
     "type": "base",
-    "cover": "covers/seven-wonders-architects.jpg"
+    "cover": "covers/seven-wonders-architects.jpg",
+    "mode": "Competitivo",
+    "complexity": "Light",
+    "category": "Gestionale / economico",
+    "bggTitle": "7 Wonders Architects",
+    "bggId": 346703,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Seven Wonders Duel",
     "type": "base",
-    "cover": "cover-1.jpg"
+    "cover": "cover-1.jpg",
+    "mode": "Competitivo",
+    "complexity": "Medium",
+    "category": "Conflitto / guerra",
+    "bggTitle": "7 Wonders Duel",
+    "bggId": 173346,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Seven Wonders Duel: Pantheon",
     "type": "expansion",
-    "cover": "covers/seven-wonders-duel-pantheon.jpg"
+    "cover": "covers/seven-wonders-duel-pantheon.jpg",
+    "mode": "Competitivo",
+    "complexity": "Medium",
+    "category": "Conflitto / guerra",
+    "bggTitle": "Seven Wonders Duel: Pantheon",
+    "bggId": 173346,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Cyclades",
     "type": "base",
-    "cover": "covers/cyclades.jpg"
+    "cover": "covers/cyclades.jpg",
+    "mode": "Competitivo",
+    "complexity": "Medium",
+    "category": "Conflitto / guerra",
+    "bggTitle": "Cyclades",
+    "bggId": 54998,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Sagrada",
     "type": "base",
-    "cover": "covers/sagrada.jpg"
+    "cover": "covers/sagrada.jpg",
+    "mode": "Competitivo",
+    "complexity": "Medium",
+    "category": "Puzzle / astratto",
+    "bggTitle": "Sagrada",
+    "bggId": 199561,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Perudo",
     "type": "base",
-    "cover": "covers/perudo.jpg"
+    "cover": "covers/perudo.jpg",
+    "mode": "Competitivo",
+    "complexity": "Light",
+    "category": "Party / sociale",
+    "bggTitle": "Perudo",
+    "bggId": null,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Tilt",
     "type": "base",
-    "cover": "cover-8.jpg"
+    "cover": "cover-8.jpg",
+    "mode": "Competitivo",
+    "complexity": "Light",
+    "category": "Deduzione / bluff",
+    "bggTitle": "Tilt",
+    "bggId": null,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Happy Little Dinosaurs",
     "type": "base",
-    "cover": "covers/happy-little-dinosaurs.jpg"
+    "cover": "covers/happy-little-dinosaurs.jpg",
+    "mode": "Competitivo",
+    "complexity": "Light",
+    "category": "Party / sociale",
+    "bggTitle": "Happy Little Dinosaurs",
+    "bggId": null,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Happy Little Dinosaurs: 5-6 Player Expansion",
     "type": "expansion",
-    "cover": "covers/happy-little-dinosaurs-5-6-player-expansion.jpg"
+    "cover": "covers/happy-little-dinosaurs-5-6-player-expansion.jpg",
+    "mode": "Competitivo",
+    "complexity": "Light",
+    "category": "Party / sociale",
+    "bggTitle": "Happy Little Dinosaurs: 5-6 Player Expansion",
+    "bggId": null,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Forest Shuffle",
     "type": "base",
-    "cover": "covers/forest-shuffle.jpg"
+    "cover": "covers/forest-shuffle.jpg",
+    "mode": "Competitivo",
+    "complexity": "Medium",
+    "category": "Avventura / esplorazione",
+    "bggTitle": "Forest Shuffle",
+    "bggId": 391163,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Forest Shuffle: Dartmoor",
     "type": "standalone",
-    "cover": "covers/forest-shuffle-dartmoor.jpg"
+    "cover": "covers/forest-shuffle-dartmoor.jpg",
+    "mode": "Competitivo",
+    "complexity": "Medium",
+    "category": "Avventura / esplorazione",
+    "bggTitle": "Forest Shuffle: Dartmoor",
+    "bggId": 391163,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Forest Shuffle: Exploration",
     "type": "expansion",
-    "cover": "covers/forest-shuffle-exploration.jpg"
+    "cover": "covers/forest-shuffle-exploration.jpg",
+    "mode": "Competitivo",
+    "complexity": "Medium",
+    "category": "Avventura / esplorazione",
+    "bggTitle": "Forest Shuffle: Exploration",
+    "bggId": 391163,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Forest Shuffle: Woodland Edge",
     "type": "expansion",
-    "cover": "covers/forest-shuffle-woodland-edge.jpg"
+    "cover": "covers/forest-shuffle-woodland-edge.jpg",
+    "mode": "Competitivo",
+    "complexity": "Medium",
+    "category": "Avventura / esplorazione",
+    "bggTitle": "Forest Shuffle: Woodland Edge",
+    "bggId": 391163,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "BANG! The Bullet!",
     "type": "base",
-    "cover": "covers/bang-the-bullet.jpg"
+    "cover": "covers/bang-the-bullet.jpg",
+    "mode": "Competitivo",
+    "complexity": "Light",
+    "category": "Party / sociale",
+    "bggTitle": "BANG! The Bullet!",
+    "bggId": null,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "BANG!: Corsa all'Oro",
     "type": "expansion",
-    "cover": "covers/bang-corsa-all-oro.jpg"
+    "cover": "covers/bang-corsa-all-oro.jpg",
+    "mode": "Competitivo",
+    "complexity": "Light",
+    "category": "Party / sociale",
+    "bggTitle": "BANG! Gold Rush",
+    "bggId": null,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Imagine",
     "type": "base",
-    "cover": "covers/imagine.jpg"
+    "cover": "covers/imagine.jpg",
+    "mode": "A squadre / semi-cooperativo",
+    "complexity": "Light",
+    "category": "Party / sociale",
+    "bggTitle": "Imagine",
+    "bggId": 191894,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Avalon",
     "type": "base",
-    "cover": "covers/avalon.jpg"
+    "cover": "covers/avalon.jpg",
+    "mode": "A squadre / semi-cooperativo",
+    "complexity": "Light",
+    "category": "Party / sociale",
+    "bggTitle": "Avalon",
+    "bggId": 128882,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Unstable Unicorns",
     "type": "base",
-    "cover": "covers/unstable-unicorns.jpg"
+    "cover": "covers/unstable-unicorns.jpg",
+    "mode": "Competitivo",
+    "complexity": "Light",
+    "category": "Party / sociale",
+    "bggTitle": "Unstable Unicorns",
+    "bggId": 234190,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "One Card Dungeon",
     "type": "base",
-    "cover": "covers/one-card-dungeon.jpg"
+    "cover": "covers/one-card-dungeon.jpg",
+    "mode": "Cooperativo",
+    "complexity": "Medium",
+    "category": "Puzzle / astratto",
+    "bggTitle": "One Card Dungeon",
+    "bggId": null,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "One Card Dungeon: M’Guf-yn Returns",
     "type": "expansion",
-    "cover": "covers/one-card-dungeon-m-guf-yn-returns.jpg"
+    "cover": "covers/one-card-dungeon-m-guf-yn-returns.jpg",
+    "mode": "Cooperativo",
+    "complexity": "Medium",
+    "category": "Puzzle / astratto",
+    "bggTitle": "One Card Dungeon: M’Guf-yn Returns",
+    "bggId": null,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Munchkin Zombies",
     "type": "base",
-    "cover": "covers/munchkin-zombies.jpg"
+    "cover": "covers/munchkin-zombies.jpg",
+    "mode": "Competitivo",
+    "complexity": "Light",
+    "category": "Party / sociale",
+    "bggTitle": "Munchkin Zombies",
+    "bggId": null,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Coco Rido 2: La Vendemmia",
     "type": "base",
-    "cover": "covers/coco-rido-2-la-vendemmia.jpg"
+    "cover": "covers/coco-rido-2-la-vendemmia.jpg",
+    "mode": "Competitivo",
+    "complexity": "Light",
+    "category": "Party / sociale",
+    "bggTitle": "Coco Rido 2: La Vendemmia",
+    "bggId": null,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Dungeon Mayhem",
     "type": "base",
-    "cover": "covers/dungeon-mayhem.jpg"
+    "cover": "covers/dungeon-mayhem.jpg",
+    "mode": "Competitivo",
+    "complexity": "Light",
+    "category": "Party / sociale",
+    "bggTitle": "Dungeon Mayhem",
+    "bggId": null,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Dungeon Mayhem: Battle for Baldur’s Gate",
     "type": "expansion",
-    "cover": "covers/dungeon-mayhem-battle-for-baldur-s-gate.jpg"
+    "cover": "covers/dungeon-mayhem-battle-for-baldur-s-gate.jpg",
+    "mode": "Competitivo",
+    "complexity": "Light",
+    "category": "Party / sociale",
+    "bggTitle": "Dungeon Mayhem: Battle for Baldur’s Gate",
+    "bggId": null,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Hero Realms",
     "type": "base",
-    "cover": "covers/hero-realms.jpg"
+    "cover": "covers/hero-realms.jpg",
+    "mode": "Competitivo",
+    "complexity": "Medium",
+    "category": "Conflitto / guerra",
+    "bggTitle": "Hero Realms",
+    "bggId": 198994,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "The Game",
     "type": "base",
-    "cover": "covers/the-game.jpg"
+    "cover": "covers/the-game.jpg",
+    "mode": "Cooperativo",
+    "complexity": "Light",
+    "category": "Puzzle / astratto",
+    "bggTitle": "The Game",
+    "bggId": 173090,
+    "bggRank": 1338,
+    "bggWeight": 1.24,
+    "bggUpdated": "2026-08-23"
   },
   {
     "name": "Spirit Island",
     "type": "base",
-    "cover": "covers/spirit-island.jpg"
+    "cover": "covers/spirit-island.jpg",
+    "mode": "Cooperativo",
+    "complexity": "Heavy",
+    "category": "Avventura / esplorazione",
+    "bggTitle": "Spirit Island",
+    "bggId": 162886,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Nemesis: Retaliation",
     "type": "base",
-    "cover": "covers/nemesis-retaliation.jpg"
+    "cover": "covers/nemesis-retaliation.jpg",
+    "mode": "A squadre / semi-cooperativo",
+    "complexity": "Heavy",
+    "category": "Avventura / esplorazione",
+    "bggTitle": "Nemesis: Retaliation",
+    "bggId": null,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Sword & Sorcery: Immortal Souls",
     "type": "base",
-    "cover": "covers/sword-sorcery-immortal-souls.jpg"
+    "cover": "covers/sword-sorcery-immortal-souls.jpg",
+    "mode": "Cooperativo",
+    "complexity": "Heavy",
+    "category": "Avventura / esplorazione",
+    "bggTitle": "Sword & Sorcery: Immortal Souls",
+    "bggId": 170771,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "The Castles of Tuscany",
     "type": "base",
-    "cover": "covers/the-castles-of-tuscany.jpg"
+    "cover": "covers/the-castles-of-tuscany.jpg",
+    "mode": "Competitivo",
+    "complexity": "Medium",
+    "category": "Gestionale / economico",
+    "bggTitle": "The Castles of Tuscany",
+    "bggId": 300327,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Dungeon Fighter",
     "type": "base",
-    "cover": "covers/dungeon-fighter.jpg"
+    "cover": "covers/dungeon-fighter.jpg",
+    "mode": "Cooperativo",
+    "complexity": "Light",
+    "category": "Avventura / esplorazione",
+    "bggTitle": "Dungeon Fighter",
+    "bggId": 102548,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Carcassonne",
     "type": "base",
-    "cover": "covers/carcassonne.jpg"
+    "cover": "covers/carcassonne.jpg",
+    "mode": "Competitivo",
+    "complexity": "Medium",
+    "category": "Gestionale / economico",
+    "bggTitle": "Carcassonne",
+    "bggId": 822,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Wingspan",
     "type": "base",
-    "cover": "covers/wingspan.jpg"
+    "cover": "covers/wingspan.jpg",
+    "mode": "Competitivo",
+    "complexity": "Medium",
+    "category": "Gestionale / economico",
+    "bggTitle": "Wingspan",
+    "bggId": 266192,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Wingspan: Oceania",
     "type": "expansion",
-    "cover": "covers/wingspan-oceania.jpg"
+    "cover": "covers/wingspan-oceania.jpg",
+    "mode": "Competitivo",
+    "complexity": "Medium",
+    "category": "Gestionale / economico",
+    "bggTitle": "Wingspan: Oceania",
+    "bggId": 266192,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Arcs",
     "type": "base",
-    "cover": "covers/arcs.jpg"
+    "cover": "covers/arcs.jpg",
+    "mode": "Competitivo",
+    "complexity": "Heavy",
+    "category": "Conflitto / guerra",
+    "bggTitle": "Arcs",
+    "bggId": 359871,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Sherlock Holmes: Carlton House & Queen’s Park",
     "type": "base",
-    "cover": "covers/sherlock-holmes-carlton-house-queen-s-park.jpg"
+    "cover": "covers/sherlock-holmes-carlton-house-queen-s-park.jpg",
+    "mode": "Cooperativo",
+    "complexity": "Medium",
+    "category": "Avventura / esplorazione",
+    "bggTitle": "Sherlock Holmes: Carlton House & Queen’s Park",
+    "bggId": null,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Exploding Kittens",
     "type": "base",
-    "cover": "covers/exploding-kittens.jpg"
+    "cover": "covers/exploding-kittens.jpg",
+    "mode": "Competitivo",
+    "complexity": "Light",
+    "category": "Party / sociale",
+    "bggTitle": "Exploding Kittens",
+    "bggId": 172225,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Exploding Kittens: Imploding Kittens",
     "type": "expansion",
-    "cover": "covers/exploding-kittens-imploding-kittens.jpg"
+    "cover": "covers/exploding-kittens-imploding-kittens.jpg",
+    "mode": "Competitivo",
+    "complexity": "Light",
+    "category": "Party / sociale",
+    "bggTitle": "Exploding Kittens: Imploding Kittens",
+    "bggId": 172225,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Exploding Kittens: Streaking Kittens",
     "type": "expansion",
-    "cover": "covers/exploding-kittens-streaking-kittens.jpg"
+    "cover": "covers/exploding-kittens-streaking-kittens.jpg",
+    "mode": "Competitivo",
+    "complexity": "Light",
+    "category": "Party / sociale",
+    "bggTitle": "Exploding Kittens: Streaking Kittens",
+    "bggId": 172225,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "MLEM: Agenzia Spaziale",
     "type": "base",
-    "cover": "covers/mlem-agenzia-spaziale.jpg"
+    "cover": "covers/mlem-agenzia-spaziale.jpg",
+    "mode": "Competitivo",
+    "complexity": "Light",
+    "category": "Avventura / esplorazione",
+    "bggTitle": "MLEM: Agenzia Spaziale",
+    "bggId": null,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Terra Nova",
     "type": "base",
-    "cover": "covers/terra-nova.jpg"
+    "cover": "covers/terra-nova.jpg",
+    "mode": "Competitivo",
+    "complexity": "Medium",
+    "category": "Gestionale / economico",
+    "bggTitle": "Terra Nova",
+    "bggId": 364186,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Dice Forge",
     "type": "base",
-    "cover": "covers/dice-forge.jpg"
+    "cover": "covers/dice-forge.jpg",
+    "mode": "Competitivo",
+    "complexity": "Light",
+    "category": "Puzzle / astratto",
+    "bggTitle": "Dice Forge",
+    "bggId": 194594,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Pozioni Esplosive",
     "type": "base",
-    "cover": "covers/pozioni-esplosive.jpg"
+    "cover": "covers/pozioni-esplosive.jpg",
+    "mode": "Competitivo",
+    "complexity": "Light",
+    "category": "Puzzle / astratto",
+    "bggTitle": "Potion Explosion",
+    "bggId": 180974,
+    "bggRank": 600,
+    "bggWeight": 1.78,
+    "bggUpdated": "2026-08-23"
   },
   {
     "name": "Catan",
     "type": "base",
-    "cover": "covers/catan.jpg"
+    "cover": "covers/catan.jpg",
+    "mode": "Competitivo",
+    "complexity": "Medium",
+    "category": "Gestionale / economico",
+    "bggTitle": "Catan",
+    "bggId": 13,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Catan: Grandi Amici",
     "type": "expansion",
-    "cover": "covers/catan-grandi-amici.jpg"
+    "cover": "covers/catan-grandi-amici.jpg",
+    "mode": "Competitivo",
+    "complexity": "Medium",
+    "category": "Gestionale / economico",
+    "bggTitle": "Catan: Frenemies",
+    "bggId": 13,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Catan: Feste",
     "type": "expansion",
-    "cover": "covers/catan-feste.jpg"
+    "cover": "covers/catan-feste.jpg",
+    "mode": "Competitivo",
+    "complexity": "Medium",
+    "category": "Gestionale / economico",
+    "bggTitle": "Catan: Festive Scenarios",
+    "bggId": 13,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Catan: Babbo Natale",
     "type": "expansion",
-    "cover": "covers/catan-babbo-natale.jpg"
+    "cover": "covers/catan-babbo-natale.jpg",
+    "mode": "Competitivo",
+    "complexity": "Medium",
+    "category": "Gestionale / economico",
+    "bggTitle": "Catan: Babbo Natale",
+    "bggId": 13,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Catan: Coniglio di Pasqua",
     "type": "expansion",
-    "cover": "covers/catan-coniglio-di-pasqua.jpg"
+    "cover": "covers/catan-coniglio-di-pasqua.jpg",
+    "mode": "Competitivo",
+    "complexity": "Medium",
+    "category": "Gestionale / economico",
+    "bggTitle": "Catan: Coniglio di Pasqua",
+    "bggId": 13,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   },
   {
     "name": "Heat",
     "type": "base",
-    "cover": "covers/heat.jpg"
+    "cover": "covers/heat.jpg",
+    "mode": "Competitivo",
+    "complexity": "Medium",
+    "category": "Corse / sport",
+    "bggTitle": "Heat",
+    "bggId": 366013,
+    "bggRank": null,
+    "bggWeight": null,
+    "bggUpdated": ""
   }
 ]
