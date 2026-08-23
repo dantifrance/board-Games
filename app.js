@@ -1,6 +1,6 @@
 const SHEET_ID = "1GVwiEQIg2snbVJqzNBBG1VmXhJdWnANgXRDF21ekDvU";
 const MATCHES_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=330320146`;
-const GAMES_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent("Giochi")}`;
+const GAMES_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&headers=1&sheet=${encodeURIComponent("Giochi")}`;
 const WISHLIST_API_URL = "https://script.google.com/macros/s/AKfycbx79KFdhvU9lgVLxDoK_Nyb1ElxxDhMPI1x1pOnHPN-E9LLL8j2FNbU5IUq2KDOscN0/exec";
 const $ = selector => document.querySelector(selector);
 const $$ = selector => [...document.querySelectorAll(selector)];
@@ -146,11 +146,11 @@ async function start() {
     const gameRows = parseCsv(await gameResponse.text());
     if (!matches.length || !("Gioco" in matches[0]) || !gameRows.some(row => row.Gioco)) throw Error("csv");
     games = normalizeGames(gameRows);
-    $("#status").textContent = "DATI LIVE · build v3.6";
+    $("#status").textContent = "DATI LIVE · build v3.6.1";
     render();
   } catch (error) {
     console.error(error);
-    $("#status").textContent = "ERRORE DATI · build v3.6";
+    $("#status").textContent = "ERRORE DATI · build v3.6.1";
     $("#total").textContent = "Errore";
   }
 }
