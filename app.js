@@ -65,7 +65,7 @@ function gameCard(game) {
   const heartLabel = game.wishlist ? "Rimuovi dalla wishlist" : "Aggiungi alla wishlist";
   return `<article class="card game" data-game="${escapeHtml(game.name)}">
     <button class="game-open" data-open-game="${escapeHtml(game.name)}" aria-label="Apri ${escapeHtml(game.name)}">
-      <div class="cover" style="${cover ? `background-image:url('${escapeHtml(cover)}')` : ""}">${cover ? "" : "🎲"}</div>
+      <div class="cover">${cover ? `<img src="${escapeHtml(cover)}" alt="Copertina di ${escapeHtml(game.name)}" loading="lazy" onerror="this.remove();this.parentElement.classList.add('missing');this.parentElement.textContent='🎲'">` : "🎲"}</div>
       <div class="txt"><b>${escapeHtml(game.name)}</b><div class="muted">${game.plays || 0} ${unit}${type}</div></div>
     </button>
     <div class="game-actions"><span class="ownership" title="${escapeHtml(ownershipLabel)}"><span aria-hidden="true">${ownershipIcon}</span> ${escapeHtml(ownershipLabel)}</span>
@@ -122,7 +122,7 @@ async function toggleWishlist(button) {
 async function start() {
   try {
     const [fallback, matchResponse, gameResponse] = await Promise.all([
-      fetch("./collection.json?v=34", {cache:"no-store"}).then(r => r.ok ? r.json() : []),
+      fetch("./collection.json?v=35", {cache:"no-store"}).then(r => r.ok ? r.json() : []),
       fetch(MATCHES_CSV_URL, {cache:"no-store"}),
       fetch(GAMES_CSV_URL, {cache:"no-store"})
     ]);
@@ -132,11 +132,11 @@ async function start() {
     const gameRows = parseCsv(await gameResponse.text());
     if (!matches.length || !("Gioco" in matches[0]) || !gameRows.some(row => row.Gioco)) throw Error("csv");
     games = normalizeGames(gameRows);
-    $("#status").textContent = "DATI LIVE · build v3.4";
+    $("#status").textContent = "DATI LIVE · build v3.5";
     render();
   } catch (error) {
     console.error(error);
-    $("#status").textContent = "ERRORE DATI · build v3.4";
+    $("#status").textContent = "ERRORE DATI · build v3.5";
     $("#total").textContent = "Errore";
   }
 }

@@ -57,7 +57,7 @@
   {
     "name": "Happy Little Dinosaurs: 5-6 Player Expansion",
     "type": "expansion",
-    "cover": ""
+    "cover": "https://teeturtle.com/cdn/shop/files/HLD-Site-Comps-HLD-Expansion_67c4f463-2ba5-4196-83eb-cf6145da07a0.jpg?v=1761688861&width=1445"
   },
   {
     "name": "Forest Shuffle",
@@ -72,22 +72,22 @@
   {
     "name": "Forest Shuffle: Exploration",
     "type": "expansion",
-    "cover": ""
+    "cover": "https://cdn11.bigcommerce.com/s-ua4dd/images/stencil/original/products/313563/425591/Copy_of_Website_Image_Template7569__81552.1753988704.png"
   },
   {
     "name": "Forest Shuffle: Woodland Edge",
     "type": "expansion",
-    "cover": ""
+    "cover": "https://www.booghe.co.uk/cdn/shop/files/a3iveakfxbh_1200x1200.jpg?v=1761735707"
   },
   {
     "name": "BANG! The Bullet!",
     "type": "base",
-    "cover": "cover-6.jpg"
+    "cover": "https://arsludica.b-cdn.net/media/catalog/product/cache/f13cfd6a4469a48c345dac9afb00d3d2/b/a/bang-the-bullet-gioco-da-tavolo_b_1_1.jpg"
   },
   {
     "name": "BANG!: Corsa all'Oro",
     "type": "expansion",
-    "cover": ""
+    "cover": "https://i5.walmartimages.com/seo/BANG-Gold-Rush-A-Rich-Expansion_50166047-ddad-4cb2-9559-fafca6ac120e_1.4498cdd6839fa936fb8eddf307bf78c3.jpeg"
   },
   {
     "name": "Imagine",
@@ -102,7 +102,7 @@
   {
     "name": "Unstable Unicorns",
     "type": "base",
-    "cover": ""
+    "cover": "https://upload.wikimedia.org/wikipedia/en/2/27/UnstableUnicornsBaseGameBox1000x1000.jpg"
   },
   {
     "name": "One Card Dungeon",
@@ -170,11 +170,6 @@
     "cover": "https://img-preview.myshopline.com/image/store/1708538770160/1ebbef7e-e91e-4329-9c83-f4979ffe910e_1445x.jpg?h=1280&w=1087"
   },
   {
-    "name": "HIT",
-    "type": "base",
-    "cover": "https://cdn-ak.f.st-hatena.com/images/fotolife/m/mikine1228/20240926/20240926161943.jpg"
-  },
-  {
     "name": "Carcassonne",
     "type": "base",
     "cover": "https://meeplescorner.co.uk/cdn/shop/files/carcassonnebigbox.webp?v=1769423426&width=1946"
@@ -202,7 +197,7 @@
   {
     "name": "Exploding Kittens",
     "type": "base",
-    "cover": ""
+    "cover": "https://www.explodingkittens.com/cdn/shop/files/EKOE3QuarterPackShot_1300x.png?v=1714762419"
   },
   {
     "name": "Exploding Kittens: Imploding Kittens",
@@ -262,6 +257,6 @@
   {
     "name": "Heat",
     "type": "base",
-    "cover": ""
+    "cover": "https://www.fantasywelt.de/media/image/product/168694/lg/heat-pedal-to-the-metal-en.jpg"
   }
 ]
