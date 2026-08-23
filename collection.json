@@ -7,10 +7,11 @@
     "complexity": "Light",
     "category": "Puzzle / astratto",
     "bggTitle": "Bomb Busters",
-    "bggId": null,
-    "bggRank": null,
-    "bggWeight": null,
-    "bggUpdated": ""
+    "bggId": 413246,
+    "bggRank": 88,
+    "bggWeight": 2,
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Power Hungry Pets",
@@ -20,10 +21,11 @@
     "complexity": "Light",
     "category": "Party / sociale",
     "bggTitle": "Power Hungry Pets",
-    "bggId": null,
-    "bggRank": null,
+    "bggId": 411404,
+    "bggRank": 4508,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Flip 7",
@@ -33,10 +35,11 @@
     "complexity": "Light",
     "category": "Deduzione / bluff",
     "bggTitle": "Flip 7",
-    "bggId": null,
-    "bggRank": null,
-    "bggWeight": null,
-    "bggUpdated": ""
+    "bggId": 420087,
+    "bggRank": 512,
+    "bggWeight": 1.04,
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Seven Wonders Architects",
@@ -45,11 +48,12 @@
     "mode": "Competitivo",
     "complexity": "Light",
     "category": "Gestionale / economico",
-    "bggTitle": "7 Wonders Architects",
+    "bggTitle": "7 Wonders: Architects",
     "bggId": 346703,
-    "bggRank": null,
-    "bggWeight": null,
-    "bggUpdated": ""
+    "bggRank": 819,
+    "bggWeight": 1.39,
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Seven Wonders Duel",
@@ -60,9 +64,10 @@
     "category": "Conflitto / guerra",
     "bggTitle": "7 Wonders Duel",
     "bggId": 173346,
-    "bggRank": null,
-    "bggWeight": null,
-    "bggUpdated": ""
+    "bggRank": 24,
+    "bggWeight": 2.23,
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Seven Wonders Duel: Pantheon",
@@ -71,11 +76,12 @@
     "mode": "Competitivo",
     "complexity": "Medium",
     "category": "Conflitto / guerra",
-    "bggTitle": "Seven Wonders Duel: Pantheon",
-    "bggId": 173346,
+    "bggTitle": "7 Wonders Duel: Pantheon",
+    "bggId": 202976,
     "bggRank": null,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Non classificato"
   },
   {
     "name": "Cyclades",
@@ -86,9 +92,10 @@
     "category": "Conflitto / guerra",
     "bggTitle": "Cyclades",
     "bggId": 54998,
-    "bggRank": null,
+    "bggRank": 272,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Sagrada",
@@ -99,9 +106,10 @@
     "category": "Puzzle / astratto",
     "bggTitle": "Sagrada",
     "bggId": 199561,
-    "bggRank": null,
-    "bggWeight": null,
-    "bggUpdated": ""
+    "bggRank": 228,
+    "bggWeight": 1.92,
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Perudo",
@@ -111,10 +119,11 @@
     "complexity": "Light",
     "category": "Party / sociale",
     "bggTitle": "Perudo",
-    "bggId": null,
-    "bggRank": null,
+    "bggId": 45,
+    "bggRank": 874,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Tilt",
@@ -127,7 +136,8 @@
     "bggId": null,
     "bggRank": null,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Da verificare"
   },
   {
     "name": "Happy Little Dinosaurs",
@@ -137,10 +147,11 @@
     "complexity": "Light",
     "category": "Party / sociale",
     "bggTitle": "Happy Little Dinosaurs",
-    "bggId": null,
-    "bggRank": null,
+    "bggId": 325414,
+    "bggRank": 4584,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Happy Little Dinosaurs: 5-6 Player Expansion",
@@ -149,11 +160,12 @@
     "mode": "Competitivo",
     "complexity": "Light",
     "category": "Party / sociale",
-    "bggTitle": "Happy Little Dinosaurs: 5-6 Player Expansion",
-    "bggId": null,
+    "bggTitle": "Happy Little Dinosaurs: 5–6 Player Expansion Pack",
+    "bggId": 325451,
     "bggRank": null,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Non classificato"
   },
   {
     "name": "Forest Shuffle",
@@ -164,9 +176,10 @@
     "category": "Avventura / esplorazione",
     "bggTitle": "Forest Shuffle",
     "bggId": 391163,
-    "bggRank": null,
-    "bggWeight": null,
-    "bggUpdated": ""
+    "bggRank": 150,
+    "bggWeight": 2.22,
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Forest Shuffle: Dartmoor",
@@ -176,10 +189,11 @@
     "complexity": "Medium",
     "category": "Avventura / esplorazione",
     "bggTitle": "Forest Shuffle: Dartmoor",
-    "bggId": 391163,
-    "bggRank": null,
+    "bggId": 438402,
+    "bggRank": 997,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Forest Shuffle: Exploration",
@@ -189,10 +203,11 @@
     "complexity": "Medium",
     "category": "Avventura / esplorazione",
     "bggTitle": "Forest Shuffle: Exploration",
-    "bggId": 391163,
+    "bggId": 438231,
     "bggRank": null,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Non classificato"
   },
   {
     "name": "Forest Shuffle: Woodland Edge",
@@ -202,10 +217,11 @@
     "complexity": "Medium",
     "category": "Avventura / esplorazione",
     "bggTitle": "Forest Shuffle: Woodland Edge",
-    "bggId": 391163,
+    "bggId": 424129,
     "bggRank": null,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Non classificato"
   },
   {
     "name": "BANG! The Bullet!",
@@ -215,10 +231,11 @@
     "complexity": "Light",
     "category": "Party / sociale",
     "bggTitle": "BANG! The Bullet!",
-    "bggId": null,
+    "bggId": 30933,
     "bggRank": null,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Non classificato"
   },
   {
     "name": "BANG!: Corsa all'Oro",
@@ -228,10 +245,11 @@
     "complexity": "Light",
     "category": "Party / sociale",
     "bggTitle": "BANG! Gold Rush",
-    "bggId": null,
+    "bggId": 107794,
     "bggRank": null,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Non classificato"
   },
   {
     "name": "Imagine",
@@ -242,9 +260,10 @@
     "category": "Party / sociale",
     "bggTitle": "Imagine",
     "bggId": 191894,
-    "bggRank": null,
+    "bggRank": 1800,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Avalon",
@@ -253,11 +272,12 @@
     "mode": "A squadre / semi-cooperativo",
     "complexity": "Light",
     "category": "Party / sociale",
-    "bggTitle": "Avalon",
+    "bggTitle": "The Resistance: Avalon",
     "bggId": 128882,
-    "bggRank": null,
+    "bggRank": 239,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Unstable Unicorns",
@@ -268,9 +288,10 @@
     "category": "Party / sociale",
     "bggTitle": "Unstable Unicorns",
     "bggId": 234190,
-    "bggRank": null,
+    "bggRank": 3596,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "One Card Dungeon",
@@ -280,10 +301,11 @@
     "complexity": "Medium",
     "category": "Puzzle / astratto",
     "bggTitle": "One Card Dungeon",
-    "bggId": null,
-    "bggRank": null,
+    "bggId": 319263,
+    "bggRank": 4872,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "One Card Dungeon: M’Guf-yn Returns",
@@ -292,11 +314,12 @@
     "mode": "Cooperativo",
     "complexity": "Medium",
     "category": "Puzzle / astratto",
-    "bggTitle": "One Card Dungeon: M’Guf-yn Returns",
-    "bggId": null,
+    "bggTitle": "One Card Dungeon: M'Guf-yn Returns",
+    "bggId": 380115,
     "bggRank": null,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Non classificato"
   },
   {
     "name": "Munchkin Zombies",
@@ -306,10 +329,11 @@
     "complexity": "Light",
     "category": "Party / sociale",
     "bggTitle": "Munchkin Zombies",
-    "bggId": null,
-    "bggRank": null,
+    "bggId": 86955,
+    "bggRank": 4489,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Coco Rido 2: La Vendemmia",
@@ -322,7 +346,8 @@
     "bggId": null,
     "bggRank": null,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Da verificare"
   },
   {
     "name": "Dungeon Mayhem",
@@ -332,10 +357,11 @@
     "complexity": "Light",
     "category": "Party / sociale",
     "bggTitle": "Dungeon Mayhem",
-    "bggId": null,
-    "bggRank": null,
+    "bggId": 260300,
+    "bggRank": 1884,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Dungeon Mayhem: Battle for Baldur’s Gate",
@@ -344,11 +370,12 @@
     "mode": "Competitivo",
     "complexity": "Light",
     "category": "Party / sociale",
-    "bggTitle": "Dungeon Mayhem: Battle for Baldur’s Gate",
-    "bggId": null,
+    "bggTitle": "Dungeon Mayhem: Battle for Baldur's Gate",
+    "bggId": 280809,
     "bggRank": null,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Non classificato"
   },
   {
     "name": "Hero Realms",
@@ -359,9 +386,10 @@
     "category": "Conflitto / guerra",
     "bggTitle": "Hero Realms",
     "bggId": 198994,
-    "bggRank": null,
+    "bggRank": 311,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "The Game",
@@ -372,9 +400,10 @@
     "category": "Puzzle / astratto",
     "bggTitle": "The Game",
     "bggId": 173090,
-    "bggRank": 1338,
+    "bggRank": 1339,
     "bggWeight": 1.24,
-    "bggUpdated": "2026-08-23"
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Spirit Island",
@@ -385,9 +414,10 @@
     "category": "Avventura / esplorazione",
     "bggTitle": "Spirit Island",
     "bggId": 162886,
-    "bggRank": null,
-    "bggWeight": null,
-    "bggUpdated": ""
+    "bggRank": 11,
+    "bggWeight": 4.07,
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Nemesis: Retaliation",
@@ -397,10 +427,11 @@
     "complexity": "Heavy",
     "category": "Avventura / esplorazione",
     "bggTitle": "Nemesis: Retaliation",
-    "bggId": null,
-    "bggRank": null,
+    "bggId": 381248,
+    "bggRank": 258,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Sword & Sorcery: Immortal Souls",
@@ -411,9 +442,10 @@
     "category": "Avventura / esplorazione",
     "bggTitle": "Sword & Sorcery: Immortal Souls",
     "bggId": 170771,
-    "bggRank": null,
+    "bggRank": 552,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "The Castles of Tuscany",
@@ -424,9 +456,10 @@
     "category": "Gestionale / economico",
     "bggTitle": "The Castles of Tuscany",
     "bggId": 300327,
-    "bggRank": null,
+    "bggRank": 1232,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Dungeon Fighter",
@@ -437,9 +470,10 @@
     "category": "Avventura / esplorazione",
     "bggTitle": "Dungeon Fighter",
     "bggId": 102548,
-    "bggRank": null,
+    "bggRank": 1548,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Carcassonne",
@@ -450,9 +484,10 @@
     "category": "Gestionale / economico",
     "bggTitle": "Carcassonne",
     "bggId": 822,
-    "bggRank": null,
+    "bggRank": 240,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Wingspan",
@@ -463,9 +498,10 @@
     "category": "Gestionale / economico",
     "bggTitle": "Wingspan",
     "bggId": 266192,
-    "bggRank": null,
+    "bggRank": 38,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Wingspan: Oceania",
@@ -474,11 +510,12 @@
     "mode": "Competitivo",
     "complexity": "Medium",
     "category": "Gestionale / economico",
-    "bggTitle": "Wingspan: Oceania",
-    "bggId": 266192,
+    "bggTitle": "Wingspan: Oceania Expansion",
+    "bggId": 300580,
     "bggRank": null,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Non classificato"
   },
   {
     "name": "Arcs",
@@ -489,9 +526,10 @@
     "category": "Conflitto / guerra",
     "bggTitle": "Arcs",
     "bggId": 359871,
-    "bggRank": null,
+    "bggRank": 100,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Sherlock Holmes: Carlton House & Queen’s Park",
@@ -500,11 +538,12 @@
     "mode": "Cooperativo",
     "complexity": "Medium",
     "category": "Avventura / esplorazione",
-    "bggTitle": "Sherlock Holmes: Carlton House & Queen’s Park",
-    "bggId": null,
-    "bggRank": null,
+    "bggTitle": "Sherlock Holmes Consulting Detective: Carlton House & Queen's Park",
+    "bggId": 223931,
+    "bggRank": 1656,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Exploding Kittens",
@@ -515,9 +554,10 @@
     "category": "Party / sociale",
     "bggTitle": "Exploding Kittens",
     "bggId": 172225,
-    "bggRank": null,
+    "bggRank": 4035,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Exploding Kittens: Imploding Kittens",
@@ -527,10 +567,11 @@
     "complexity": "Light",
     "category": "Party / sociale",
     "bggTitle": "Exploding Kittens: Imploding Kittens",
-    "bggId": 172225,
+    "bggId": 204053,
     "bggRank": null,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Non classificato"
   },
   {
     "name": "Exploding Kittens: Streaking Kittens",
@@ -540,10 +581,11 @@
     "complexity": "Light",
     "category": "Party / sociale",
     "bggTitle": "Exploding Kittens: Streaking Kittens",
-    "bggId": 172225,
+    "bggId": 260214,
     "bggRank": null,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Non classificato"
   },
   {
     "name": "MLEM: Agenzia Spaziale",
@@ -552,11 +594,12 @@
     "mode": "Competitivo",
     "complexity": "Light",
     "category": "Avventura / esplorazione",
-    "bggTitle": "MLEM: Agenzia Spaziale",
-    "bggId": null,
-    "bggRank": null,
+    "bggTitle": "MLEM: Space Agency",
+    "bggId": 387378,
+    "bggRank": 979,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Terra Nova",
@@ -567,9 +610,10 @@
     "category": "Gestionale / economico",
     "bggTitle": "Terra Nova",
     "bggId": 364186,
-    "bggRank": null,
+    "bggRank": 1772,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Dice Forge",
@@ -580,9 +624,10 @@
     "category": "Puzzle / astratto",
     "bggTitle": "Dice Forge",
     "bggId": 194594,
-    "bggRank": null,
+    "bggRank": 505,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Pozioni Esplosive",
@@ -593,9 +638,10 @@
     "category": "Puzzle / astratto",
     "bggTitle": "Potion Explosion",
     "bggId": 180974,
-    "bggRank": 600,
+    "bggRank": 602,
     "bggWeight": 1.78,
-    "bggUpdated": "2026-08-23"
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Catan",
@@ -606,9 +652,10 @@
     "category": "Gestionale / economico",
     "bggTitle": "Catan",
     "bggId": 13,
-    "bggRank": null,
+    "bggRank": 627,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   },
   {
     "name": "Catan: Grandi Amici",
@@ -617,11 +664,12 @@
     "mode": "Competitivo",
     "complexity": "Medium",
     "category": "Gestionale / economico",
-    "bggTitle": "Catan: Frenemies",
-    "bggId": 13,
+    "bggTitle": "Catan Scenarios: Frenemies",
+    "bggId": 131958,
     "bggRank": null,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Non classificato"
   },
   {
     "name": "Catan: Feste",
@@ -631,10 +679,11 @@
     "complexity": "Medium",
     "category": "Gestionale / economico",
     "bggTitle": "Catan: Festive Scenarios",
-    "bggId": 13,
+    "bggId": null,
     "bggRank": null,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Da verificare"
   },
   {
     "name": "Catan: Babbo Natale",
@@ -643,11 +692,12 @@
     "mode": "Competitivo",
     "complexity": "Medium",
     "category": "Gestionale / economico",
-    "bggTitle": "Catan: Babbo Natale",
-    "bggId": 13,
+    "bggTitle": "Catan Scenarios:  Easter Bunny",
+    "bggId": 189097,
     "bggRank": null,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Non classificato"
   },
   {
     "name": "Catan: Coniglio di Pasqua",
@@ -656,11 +706,12 @@
     "mode": "Competitivo",
     "complexity": "Medium",
     "category": "Gestionale / economico",
-    "bggTitle": "Catan: Coniglio di Pasqua",
-    "bggId": 13,
+    "bggTitle": "Catan Scenarios:  Easter Bunny",
+    "bggId": 189097,
     "bggRank": null,
     "bggWeight": null,
-    "bggUpdated": ""
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Non classificato"
   },
   {
     "name": "Heat",
@@ -669,10 +720,11 @@
     "mode": "Competitivo",
     "complexity": "Medium",
     "category": "Corse / sport",
-    "bggTitle": "Heat",
+    "bggTitle": "Heat: Pedal to the Metal",
     "bggId": 366013,
-    "bggRank": null,
-    "bggWeight": null,
-    "bggUpdated": ""
+    "bggRank": 47,
+    "bggWeight": 2.2,
+    "bggUpdated": "2026-08-23",
+    "bggStatus": "Classificato"
   }
 ]

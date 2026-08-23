@@ -65,8 +65,8 @@ function openGameDetail(game, fromView = "games") {
   const topWins = leaders[0]?.[1] || 0;
   const leaderText = leaders.filter(([,count]) => count === topWins).map(([name]) => name).join(", ") || "—";
   const last = rows.at(-1);
-  const bgg = game.bggId ? `<a class="bgglink" href="https://boardgamegeek.com/boardgame/${game.bggId}" target="_blank" rel="noopener">Apri ${escapeHtml(game.bggTitle)} su BoardGameGeek ↗</a>` : `<span class="muted">Scheda BGG da verificare</span>`;
-  showDetail(`<section class="detailhero card">${game.cover ? `<img src="${escapeHtml(game.cover)}" alt="Copertina di ${escapeHtml(game.name)}">` : ""}<div><p class="eyebrow">${escapeHtml(game.mode)} · ${escapeHtml(game.complexity)}</p><h2>${escapeHtml(game.name)}</h2><p class="muted">${escapeHtml(game.category)} · ${game.owned ? "🏠 In collezione" : "👤 Non posseduto"}</p>${bgg}</div></section><div class="detailmetrics"><div class="card metric"><span class="muted">Partite</span><b>${rows.length}</b></div><div class="card metric"><span class="muted">Leader vittorie</span><b class="metricname">${escapeHtml(leaderText)}</b></div><div class="card metric"><span class="muted">Ultima partita</span><b class="metricname">${formatDate(last?.Data)}</b></div><div class="card metric"><span class="muted">Rank BGG</span><b>${game.bggRank ? `#${game.bggRank}` : "—"}</b></div></div><section class="section"><h3>Vittorie per giocatore</h3><div class="card">${bars(leaders.map(([label,value]) => ({label,value})), rows.length)}</div></section><section class="section"><h3>Storico di ${escapeHtml(game.name)}</h3><div class="card">${matchRows([...rows].reverse())}</div></section>`, fromView);
+  const bgg = game.bggId ? `<a class="bgglink" href="https://boardgamegeek.com/boardgame/${game.bggId}" target="_blank" rel="noopener">Apri ${escapeHtml(game.bggTitle)} su BoardGameGeek ↗</a><small class="bggdate">Dati BGG aggiornati il ${formatDate(game.bggUpdated)}</small>` : `<span class="muted">Scheda BGG da verificare</span>`;
+  showDetail(`<section class="detailhero card">${game.cover ? `<img src="${escapeHtml(game.cover)}" alt="Copertina di ${escapeHtml(game.name)}">` : ""}<div><p class="eyebrow">${escapeHtml(game.mode)} · ${escapeHtml(game.complexity)}</p><h2>${escapeHtml(game.name)}</h2><p class="muted">${escapeHtml(game.category)} · ${game.owned ? "🏠 In collezione" : "👤 Non posseduto"}</p>${bgg}</div></section><div class="detailmetrics"><div class="card metric"><span class="muted">Partite</span><b>${rows.length}</b></div><div class="card metric"><span class="muted">Leader vittorie</span><b class="metricname">${escapeHtml(leaderText)}</b></div><div class="card metric"><span class="muted">Ultima partita</span><b class="metricname">${formatDate(last?.Data)}</b></div><div class="card metric"><span class="muted">Rank BGG</span><b>${game.bggRank ? `#${game.bggRank}` : game.bggId ? "N/C" : "—"}</b></div></div><section class="section"><h3>Vittorie per giocatore</h3><div class="card">${bars(leaders.map(([label,value]) => ({label,value})), rows.length)}</div></section><section class="section"><h3>Storico di ${escapeHtml(game.name)}</h3><div class="card">${matchRows([...rows].reverse())}</div></section>`, fromView);
 }
 
 function openPlayerDetail(name) {
@@ -97,7 +97,8 @@ function normalizeGames(rows) {
       bggId: Number(row["BGG ID"] || fallback.bggId) || null,
       bggRank: Number(row["BGG Overall Rank"] || fallback.bggRank) || null,
       bggWeight: Number(String(row["Peso BGG"] || fallback.bggWeight || "").replace(",", ".")) || null,
-      bggUpdated: row["Aggiornamento BGG"] || fallback.bggUpdated || ""
+      bggUpdated: row["Aggiornamento BGG"] || fallback.bggUpdated || "",
+      bggStatus: row["Stato BGG"] || fallback.bggStatus || "Da verificare"
     };
   });
   const known = new Set(normalized.map(game => game.name));
@@ -115,7 +116,7 @@ function gameCard(game) {
   const ownershipIcon = game.owned ? "🏠" : "👤";
   const heart = game.wishlist ? "♥" : "♡";
   const heartLabel = game.wishlist ? "Rimuovi dalla wishlist" : "Aggiungi alla wishlist";
-  const bggBadge = game.bggRank ? `<a class="bgg" href="https://boardgamegeek.com/boardgame/${game.bggId}" target="_blank" rel="noopener" aria-label="Apri ${escapeHtml(game.bggTitle)} su BoardGameGeek">BGG #${game.bggRank}</a>` : "";
+  const bggBadge = game.bggId ? `<a class="bgg ${game.bggRank ? "" : "unranked"}" href="https://boardgamegeek.com/boardgame/${game.bggId}" target="_blank" rel="noopener" aria-label="Apri ${escapeHtml(game.bggTitle)} su BoardGameGeek">${game.bggRank ? `BGG #${game.bggRank}` : "BGG N/C"}</a>` : `<span class="bgg pending">BGG da verificare</span>`;
   return `<article class="card game" data-game="${escapeHtml(game.name)}">
     <button class="game-open" data-open-game="${escapeHtml(game.name)}" aria-label="Apri ${escapeHtml(game.name)}">
       <div class="cover">${cover ? `<img src="${escapeHtml(cover)}" alt="Copertina di ${escapeHtml(game.name)}" loading="lazy" onerror="this.remove();this.parentElement.classList.add('missing');this.parentElement.textContent='🎲'">` : "🎲"}</div>
@@ -179,7 +180,7 @@ async function toggleWishlist(button) {
 async function start() {
   try {
     const [fallback, matchResponse, gameResponse] = await Promise.all([
-      fetch("./collection.json?v=36", {cache:"no-store"}).then(r => r.ok ? r.json() : []),
+      fetch("./collection.json?v=38", {cache:"no-store"}).then(r => r.ok ? r.json() : []),
       fetch(MATCHES_CSV_URL, {cache:"no-store"}),
       fetch(GAMES_CSV_URL, {cache:"no-store"})
     ]);
@@ -189,11 +190,11 @@ async function start() {
     const gameRows = parseCsv(await gameResponse.text());
     if (!matches.length || !("Gioco" in matches[0]) || !gameRows.some(row => row.Gioco)) throw Error("csv");
     games = normalizeGames(gameRows);
-    $("#status").textContent = "DATI LIVE · build v3.7";
+    $("#status").textContent = "DATI LIVE · build v3.8";
     render();
   } catch (error) {
     console.error(error);
-    $("#status").textContent = "ERRORE DATI · build v3.7";
+    $("#status").textContent = "ERRORE DATI · build v3.8";
     $("#total").textContent = "Errore";
   }
 }
