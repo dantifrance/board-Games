@@ -9,6 +9,7 @@ let games = [];
 let matches = [];
 let collectionFallback = [];
 const filters = {mode: "", complexity: "", category: ""};
+let returnView = "games";
 
 function parseCsv(text) {
   const table = [];
@@ -35,6 +36,48 @@ function parseCsv(text) {
 const split = value => (value || "").split(";").map(item => item.trim()).filter(Boolean);
 const isYes = value => /^(s[iì]|si|yes|true|1)$/i.test((value || "").trim());
 const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[char]));
+const winnerNames = row => split(row["Vincitore/i"]);
+const formatDate = value => value ? new Intl.DateTimeFormat("it-IT", {day:"numeric", month:"short", year:"numeric"}).format(new Date(`${value}T12:00:00`)) : "—";
+
+function showDetail(html, fromView) {
+  returnView = fromView || "games";
+  ['home','games','wishlist','players','history'].forEach(view => $(`#${view}`).classList.add('hidden'));
+  $('#detailbody').innerHTML = html;
+  $('#detail').classList.remove('hidden');
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function bars(items, total, suffix = "") {
+  if (!items.length) return `<p class="muted">Non ci sono ancora dati sufficienti.</p>`;
+  const max = Math.max(...items.map(item => item.value), 1);
+  return `<div class="chart">${items.map(item => `<div class="chartrow"><div class="chartlabel"><span>${escapeHtml(item.label)}</span><b>${item.value}${suffix}</b></div><div class="track"><span style="width:${item.value / max * 100}%"></span></div>${total ? `<small class="muted">${Math.round(item.value / total * 100)}%</small>` : ""}</div>`).join("")}</div>`;
+}
+
+function matchRows(rows) {
+  return rows.length ? rows.map(row => `<div class="row historyrow"><div class="grow"><b>${escapeHtml(row.Gioco || "")}</b><div class="muted">${formatDate(row.Data)} · ${escapeHtml(row.Giocatori || "")}</div></div><div class="result">${winnerNames(row).length ? `🏆 ${escapeHtml(row["Vincitore/i"])}` : "—"}${row.Punteggi ? `<small>${escapeHtml(row.Punteggi)}</small>` : ""}</div></div>`).join("") : `<p class="muted">Nessuna partita registrata.</p>`;
+}
+
+function openGameDetail(game, fromView = "games") {
+  const rows = matches.filter(row => row.Gioco === game.name);
+  const wins = {};
+  rows.forEach(row => winnerNames(row).forEach(name => wins[name] = (wins[name] || 0) + 1));
+  const leaders = Object.entries(wins).sort((a,b) => b[1] - a[1]);
+  const topWins = leaders[0]?.[1] || 0;
+  const leaderText = leaders.filter(([,count]) => count === topWins).map(([name]) => name).join(", ") || "—";
+  const last = rows.at(-1);
+  const bgg = game.bggId ? `<a class="bgglink" href="https://boardgamegeek.com/boardgame/${game.bggId}" target="_blank" rel="noopener">Apri ${escapeHtml(game.bggTitle)} su BoardGameGeek ↗</a>` : `<span class="muted">Scheda BGG da verificare</span>`;
+  showDetail(`<section class="detailhero card">${game.cover ? `<img src="${escapeHtml(game.cover)}" alt="Copertina di ${escapeHtml(game.name)}">` : ""}<div><p class="eyebrow">${escapeHtml(game.mode)} · ${escapeHtml(game.complexity)}</p><h2>${escapeHtml(game.name)}</h2><p class="muted">${escapeHtml(game.category)} · ${game.owned ? "🏠 In collezione" : "👤 Non posseduto"}</p>${bgg}</div></section><div class="detailmetrics"><div class="card metric"><span class="muted">Partite</span><b>${rows.length}</b></div><div class="card metric"><span class="muted">Leader vittorie</span><b class="metricname">${escapeHtml(leaderText)}</b></div><div class="card metric"><span class="muted">Ultima partita</span><b class="metricname">${formatDate(last?.Data)}</b></div><div class="card metric"><span class="muted">Rank BGG</span><b>${game.bggRank ? `#${game.bggRank}` : "—"}</b></div></div><section class="section"><h3>Vittorie per giocatore</h3><div class="card">${bars(leaders.map(([label,value]) => ({label,value})), rows.length)}</div></section><section class="section"><h3>Storico di ${escapeHtml(game.name)}</h3><div class="card">${matchRows([...rows].reverse())}</div></section>`, fromView);
+}
+
+function openPlayerDetail(name) {
+  const rows = matches.filter(row => split(row.Giocatori).includes(name));
+  const wonRows = rows.filter(row => winnerNames(row).includes(name));
+  const gameCounts = {};
+  rows.forEach(row => gameCounts[row.Gioco] = (gameCounts[row.Gioco] || 0) + 1);
+  const favoriteGames = Object.entries(gameCounts).sort((a,b) => b[1] - a[1]);
+  const last = rows.at(-1);
+  showDetail(`<section class="detailhero playerhero card"><div class="avatar">${escapeHtml(name.charAt(0).toUpperCase())}</div><div><p class="eyebrow">Profilo giocatore</p><h2>${escapeHtml(name)}</h2><p class="muted">${favoriteGames.length} giochi diversi</p></div></section><div class="detailmetrics"><div class="card metric"><span class="muted">Partite</span><b>${rows.length}</b></div><div class="card metric"><span class="muted">Vittorie</span><b>${wonRows.length}</b></div><div class="card metric"><span class="muted">Percentuale vittorie</span><b>${rows.length ? Math.round(wonRows.length / rows.length * 100) : 0}%</b></div><div class="card metric"><span class="muted">Ultima partita</span><b class="metricname">${last ? escapeHtml(last.Gioco) : "—"}</b></div></div><section class="section"><h3>Giochi più giocati</h3><div class="card">${bars(favoriteGames.map(([label,value]) => ({label,value})), rows.length, "×")}</div></section><section class="section"><h3>Storico di ${escapeHtml(name)}</h3><div class="card">${matchRows([...rows].reverse())}</div></section>`, "players");
+}
 
 function normalizeGames(rows) {
   const fallbackByName = new Map(collectionFallback.map(game => [game.name, game]));
@@ -102,11 +145,11 @@ function render() {
   const wishlist = shownGames.filter(game => game.wishlist && !game.owned);
   $("#total").textContent = `${shownMatches.length} partite`;
   $("#metrics").innerHTML = `<div class="card metric"><span class="muted">Partite</span><b>${shownMatches.length}</b></div><div class="card metric"><span class="muted">Collezione</span><b>${shownGames.filter(game => game.owned && game.type !== "expansion").length}</b></div><div class="card metric"><span class="muted">Wishlist</span><b>${wishlist.length}</b></div><div class="card metric"><span class="muted">Giocatori</span><b>${players.length}</b></div>`;
-  $("#ranking").innerHTML = players.map((player, i) => `<div class="row"><b>${i+1}.</b><div class="grow"><b>${escapeHtml(player.name)}</b><div class="muted">${player.plays} giocate · ${player.wins} vittorie</div></div><span class="badge">${player.plays ? (player.wins/player.plays*100).toFixed(0) : 0}%</span></div>`).join("");
+  $("#ranking").innerHTML = players.map((player, i) => `<button class="row playerlink" data-open-player="${escapeHtml(player.name)}"><b>${i+1}.</b><div class="grow"><b>${escapeHtml(player.name)}</b><div class="muted">${player.plays} giocate · ${player.wins} vittorie</div></div><span class="badge">${player.plays ? (player.wins/player.plays*100).toFixed(0) : 0}%</span><span>›</span></button>`).join("");
   $("#topgames").innerHTML = (played.length ? played : shownGames).slice(0,4).map(gameCard).join("");
   $("#allgames").innerHTML = shownGames.length ? shownGames.map(gameCard).join("") : `<div class="card empty">Nessun gioco corrisponde ai filtri scelti.</div>`;
   $("#wishlistgames").innerHTML = wishlist.length ? wishlist.map(gameCard).join("") : `<div class="card empty">Tocca ♡ su un gioco non posseduto per aggiungerlo qui.</div>`;
-  $("#playerlist").innerHTML = players.map(player => `<div class="row"><div class="grow"><b>${escapeHtml(player.name)}</b><div class="muted">${player.plays} giocate</div></div><b>${player.wins} 🏆</b></div>`).join("");
+  $("#playerlist").innerHTML = players.map(player => `<button class="row playerlink" data-open-player="${escapeHtml(player.name)}"><div class="avatar small">${escapeHtml(player.name.charAt(0).toUpperCase())}</div><div class="grow"><b>${escapeHtml(player.name)}</b><div class="muted">${player.plays} giocate</div></div><b>${player.wins} 🏆</b><span>›</span></button>`).join("");
   $("#historylist").innerHTML = [...shownMatches].reverse().slice(0,60).map(row => `<div class="row"><div class="grow"><b>${escapeHtml(row.Gioco || "")}</b><div class="muted">${escapeHtml(row.Data || "")}</div></div><b>${escapeHtml(row["Vincitore/i"] || "")}</b></div>`).join("");
 }
 
@@ -146,11 +189,11 @@ async function start() {
     const gameRows = parseCsv(await gameResponse.text());
     if (!matches.length || !("Gioco" in matches[0]) || !gameRows.some(row => row.Gioco)) throw Error("csv");
     games = normalizeGames(gameRows);
-    $("#status").textContent = "DATI LIVE · build v3.6.1";
+    $("#status").textContent = "DATI LIVE · build v3.7";
     render();
   } catch (error) {
     console.error(error);
-    $("#status").textContent = "ERRORE DATI · build v3.6.1";
+    $("#status").textContent = "ERRORE DATI · build v3.7";
     $("#total").textContent = "Errore";
   }
 }
@@ -162,15 +205,16 @@ $$('.tab').forEach(button => button.onclick = () => {
 document.addEventListener('click', event => {
   const heart = event.target.closest('[data-wishlist]');
   if (heart) { event.stopPropagation(); toggleWishlist(heart); return; }
+  const player = event.target.closest('[data-open-player]');
+  if (player) { openPlayerDetail(player.dataset.openPlayer); return; }
   const open = event.target.closest('[data-open-game]');
   if (!open) return;
   const game = games.find(item => item.name === open.dataset.openGame);
   if (!game) return;
-  $("#detailbody").innerHTML = `<div class="card"><h2>${escapeHtml(game.name)}</h2><p class="muted">${game.owned ? "🏠 In collezione" : `👤 ${escapeHtml(game.owner || "Non posseduto")}`}${game.wishlist ? " · ♥ Wishlist" : ""}</p><p>${escapeHtml(game.mode)} · ${escapeHtml(game.complexity)} · ${escapeHtml(game.category)}</p>${game.bggId ? `<p><a class="bgg" href="https://boardgamegeek.com/boardgame/${game.bggId}" target="_blank" rel="noopener">${escapeHtml(game.bggTitle)}${game.bggRank ? ` · BGG #${game.bggRank}` : ""}${game.bggWeight ? ` · peso ${game.bggWeight.toFixed(2)}` : ""}</a></p>` : ""}</div>`;
-  ['home','games','wishlist','players','history'].forEach(view => $(`#${view}`).classList.add('hidden'));
-  $('#detail').classList.remove('hidden');
+  const visibleView = ['home','games','wishlist','players','history'].find(view => !$(`#${view}`).classList.contains('hidden')) || "games";
+  openGameDetail(game, visibleView);
 });
-$('#back').onclick = () => { $('#detail').classList.add('hidden'); $('#games').classList.remove('hidden'); };
+$('#back').onclick = () => { $('#detail').classList.add('hidden'); $(`#${returnView}`).classList.remove('hidden'); };
 $$('[data-filter]').forEach(select => select.onchange = () => { filters[select.dataset.filter] = select.value; render(); });
 $('#clearfilters').onclick = () => { Object.keys(filters).forEach(key => filters[key] = ""); $$('[data-filter]').forEach(select => select.value = ""); render(); };
 start();
